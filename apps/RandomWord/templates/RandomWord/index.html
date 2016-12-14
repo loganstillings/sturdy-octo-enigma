@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <form action="/generated" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Generate">
+        </form>
+        Attempt: {{request.session.num}}
+        <p>Random Word: {{request.session.random_word}}</p>
+        <form action="/reset" method="post">
+            {% csrf_token %}
+            <input type="submit" value="reset">
+        </form>
+    </body>
+</html>
